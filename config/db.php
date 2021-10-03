@@ -1,10 +1,12 @@
 <?php
+$url = parse_url(getenv("DATABASE_URL"));
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'pgsql:host=ec2-54-216-17-9.eu-west-1.compute.amazonaws.com::5432;dbname=dchi0ike84j4br',
-    'username' => 'sbhqdhgxwohzsi',
-    'password' => '665c23411d75fabf265a31275e813a60cd0a24b4d38bf9a8900f3a5c4448a492',
+    'dsn' => 'pgsql:host=' . $url["host"] . ';
+    port=' . $url["port"] . 'dbname=' . ltrim($url["path"], "/"),
+    'username' => $url["user"],
+    'password' => $url["pass"],
     'charset' => 'utf8',
 
     // Schema cache options (for production environment)
