@@ -125,4 +125,10 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
+
+    public function actionEnv()
+    {
+        $url = parse_url(getenv("DATABASE_URL"));
+        var_dump($url);
+    }
 }
