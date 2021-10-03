@@ -10,3 +10,10 @@ $connection = Yii::$app->db->createCommand('CREATE TABLE test (
     title text
 )');
 
+
+$url = parse_url(getenv("DATABASE_URL"));
+print('$url');
+var_dump($url);
+
+print('$connection');
+var_dump($connection);

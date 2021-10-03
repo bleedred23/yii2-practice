@@ -128,8 +128,7 @@ class SiteController extends Controller
 
     public function actionTest()
     {
-        $url = parse_url(getenv("DATABASE_URL"));
-        var_dump($url);
+        return $this->render('test');
 
     }
 }
